@@ -1,13 +1,22 @@
 import 'fomantic-ui-css/semantic.css';
-import React from 'react';
+import React, { Component } from 'react';
+import './App.css';
 import Header from './Header';
+import AddNote from './AddNote';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {notes: []};
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <AddNote notesArray={this.state.notes} />
+      </div>
+    );
+  }
 }
 
 export default App;

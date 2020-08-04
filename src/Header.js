@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Header extends Component {
     render() {
         return (
-            <header className="">
+            <header className="main-header">
                 <div className="ui three item menu">
                     <span className="item">Personal Challenge</span>
                     <div className="ui floating labeled icon dropdown button item" id="categories">
@@ -24,7 +24,7 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                    <a class="item" href="https://github.com/Naylin15/react-todolist">View it on GitHub</a>
+                    <a className="item" href="https://github.com/Naylin15/react-todolist">View it on GitHub</a>
                 </div>
             </header>
         )

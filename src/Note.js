@@ -6,8 +6,7 @@ import DropdownCategory from './displayNote/DropdownCategory';
 const OnlyNote = (props) => {
     const singleNote = props.notesArray.map((note, index) => {
        return (
-        <Grid centered columns={3}>
-            <Grid.Row key={index}>
+            <Grid.Row centered columns={3} key={index}>
                 <Grid.Column width={2}>
                     <Checkbox />
                 </Grid.Column>
@@ -19,11 +18,10 @@ const OnlyNote = (props) => {
                     <DropdownOptions />
                 </Grid.Column>
             </Grid.Row>
-        </Grid>
        )
      })
     
-    return <div className='article ui two column stackable grid'>{singleNote}</div>
+    return singleNote
 
 }
 
@@ -31,7 +29,9 @@ class Note extends Component {
     render() {
         const {notesArray} = this.props
         return (
+            <Grid>
                 <OnlyNote notesArray={notesArray}/>
+            </Grid>
         )
     }
 }

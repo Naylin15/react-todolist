@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Note from './Note';
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button, Grid, Header } from 'semantic-ui-react';
 
 class AddNote extends Component {
     constructor(props) {
@@ -35,21 +35,19 @@ class AddNote extends Component {
     render() {
         return (
             <div>
-        <div className="ui centered grid container shadow">
-            <div className="ui container row">
-                <h2 className="ui header">To-Do List</h2>
-            </div>
-            <div className="ui container row">
-                <div className="ui center aligned form">
-                    <Form onSubmit={this.handleSubmit}>
-                        <Form.Field>
-                            <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} />
-                        </Form.Field>
-                        <Button type='submit' className='ui primary button'>Submit</Button>
-                    </Form>
-                </div>
-            </div>
-        </div>
+                <Grid container centered className='shadow'>
+                    <Grid.Row>
+                        <Header as='h2'>To-Do List</Header>
+                    </Grid.Row>
+                    <Grid.Row>    
+                        <Form onSubmit={this.handleSubmit}>
+                            <Form.Field>
+                                <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} />
+                            </Form.Field>
+                            <Button type='submit' className='ui primary button'>Add</Button>
+                        </Form>
+                    </Grid.Row>
+                </Grid>
             <Note notesArray={this.props.notesArray}/>
         </div>
 

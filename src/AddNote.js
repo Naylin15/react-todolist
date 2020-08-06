@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Note from './Note';
+import { Form, Button } from 'semantic-ui-react';
 
 class AddNote extends Component {
     constructor(props) {
@@ -40,14 +41,12 @@ class AddNote extends Component {
             </div>
             <div className="ui container row">
                 <div className="ui center aligned form">
-                    <form className="ui form" id="form-add" onSubmit={this.handleSubmit}>
-                        <div className="inline fields">
-                                <div className="ui fourteen wide field">
-                                    <input type="text" name="noteTitle" id="noteTitle" value={this.state.value} onChange={this.handleChange} placeholder="What's next?" required />
-                                </div>
-                                <button type="submit" className="ui primary button center aligned" id="addNoteBtn">Add</button>
-                        </div>
-                    </form>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Field>
+                            <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} />
+                        </Form.Field>
+                        <Button type='submit' className='ui primary button'>Submit</Button>
+                    </Form>
                 </div>
             </div>
         </div>

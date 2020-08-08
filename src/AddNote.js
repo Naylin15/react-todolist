@@ -28,7 +28,6 @@ class AddNote extends Component {
         var newArray = notes;
         newArray.push({title: this.state.value});
         this.clearForm();
-        return newArray;
     }    
 
     

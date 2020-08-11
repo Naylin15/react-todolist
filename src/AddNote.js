@@ -4,7 +4,7 @@ import { Form, Button, Grid, Header } from 'semantic-ui-react';
 
 class AddNote extends Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {value: ''};
     
         this.handleChange = this.handleChange.bind(this);
@@ -47,7 +47,7 @@ class AddNote extends Component {
                         </Form>
                     </Grid.Row>
                 </Grid>
-            <Note notesArray={this.props.notesArray}/>
+                <Note notesArray={this.props.notesArray}/>
         </div>
 
         )

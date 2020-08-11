@@ -1,38 +1,8 @@
-import React, { Component } from 'react';
-import { Checkbox, Grid, Header, Dropdown } from 'semantic-ui-react';
-// import DropdownOptions from './displayNote/DropdownOptions';
-import DropdownCategory from './displayNote/DropdownCategory';
+import React from 'react';
+import { Grid } from 'semantic-ui-react';
+import SingleNote from './displayNote/SingleNote';
 
-function OnlyNote(props) {
-    console.log(props);
-    const singleNote = props.notesArray.map((note, index) => {
-       return (
-            <Grid.Row centered columns={3} key={index}>
-                <Grid.Column width={2}>
-                    <Checkbox />
-                </Grid.Column>
-                <Grid.Column>
-                    <Header as='h2'>{note.title}</Header>
-                </Grid.Column>
-                <Grid.Column>
-                    <DropdownCategory />
-                    <Dropdown icon='ellipsis vertical'>
-                        <Dropdown.Menu>
-                            <Dropdown.Item text='Delete' onClick={() => this.removeNote(index, props.notesArray)}/>
-                            <Dropdown.Item text='Edit' />
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Grid.Column>
-            </Grid.Row>
-       )
-     })
-    
-    return singleNote
-
-}
-
-
-class Note extends Component {
+class Note extends React.Component {
     constructor(props) {
         super(props);
         this.removeNote = this.removeNote.bind(this);
@@ -42,17 +12,24 @@ class Note extends Component {
         }
     }
 
-    removeNote(id, notes) {
-        let newArray = notes;
+    removeNote(id) {
+        let newArray = [...this.state.notesArray];
         newArray.splice(id, 1);
+        this.setState({notesArray: newArray});
         console.log(newArray);
-        //     // return <OnlyNote notesArray={newArray}/>
     }
 
     render() {
         return (
             <Grid>
-                <OnlyNote notesArray={this.state.notesArray} removeNote={this.removeNote}/>
+                {this.state.notesArray.map((note, index) =>    
+                    <SingleNote
+                        key={index}
+                        noteId={index}
+                        note={note}
+                        removeNote={this.removeNote}
+                    />
+                )}
             </Grid>
         )
     }

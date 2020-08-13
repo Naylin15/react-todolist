@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Note from './Note';
-import { Form, Button, Grid, Header } from 'semantic-ui-react';
+import { Form, Grid, Header } from 'semantic-ui-react';
 
 class AddNote extends Component {
-    constructor(props) {
+    constructor() {
         super();
-        this.state = {value: ''};
+        this.state = {value: '', notes: []};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateState = this.updateState.bind(this);
     }
 
     handleChange(event) {
@@ -17,7 +18,7 @@ class AddNote extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.addNote(this.props.notesArray);
+        this.addNote(this.state.notes);
     }
 
     clearForm() {
@@ -27,9 +28,14 @@ class AddNote extends Component {
     addNote(notes) {
         var newArray = notes;
         newArray.push({title: this.state.value});
+        // should I call updateState here? in order to not repeat the setState line
+        this.setState({notes: newArray});
         this.clearForm();
-    }    
+    }
 
+    updateState(newArray) {
+        this.setState({notes: newArray});
+    }
     
     render() {
         return (
@@ -41,13 +47,13 @@ class AddNote extends Component {
                     <Grid.Row>    
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Field>
-                                <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} />
+                                <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} required/>
                             </Form.Field>
-                            <Button type='submit' className='ui primary button'>Add</Button>
+                            <button type='submit' className='ui primary button'>Add</button>
                         </Form>
                     </Grid.Row>
                 </Grid>
-                <Note notesArray={this.props.notesArray}/>
+                <Note notesArray={this.state.notes} updateState={this.updateState} />
         </div>
 
         )

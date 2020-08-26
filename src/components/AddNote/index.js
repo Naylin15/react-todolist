@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Note from './Note';
+import Note from '../Note';
 import { Form, Grid, Header } from 'semantic-ui-react';
 
 class AddNote extends Component {

@@ -36,6 +36,11 @@ body {
     text-decoration: line-through;
 }
 
+.finished h2 {
+    color: grey;
+    text-decoration: line-through;
+}
+
 .hide {
     display: none;
 }

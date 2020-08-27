@@ -13,7 +13,7 @@ class SingleNote extends React.Component {
             return (
                 <Grid.Row centered columns={3} id={noteId}>
                     <Grid.Column width={2}>
-                        <Checkbox onChange={() => checkNote(noteId)}/>
+                        <Checkbox onChange={(e, data) => checkNote(noteId, e, data)}/>
                     </Grid.Column>
                     <Grid.Column>
                         <Header as='h2' id={'note-' + noteId}>{note.title}</Header>

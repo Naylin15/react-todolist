@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import SingleNote from '../../displayNote/SingleNote';
+import SingleNote from '../SingleNote';
 
 class Note extends React.Component {
     constructor(props) {
@@ -15,14 +15,13 @@ class Note extends React.Component {
         }
     }
 
-    checkNote(id) {
+    checkNote = (id, e, data) => {
         const finished = document.getElementById(id);
-        console.log("to do" + {finished});
-        // if () {
-        //     finished.className = "centered three column row finished";
-        // } else {
-        //     finished.className = "centered three column row"
-        // }
+        if (data.checked) {
+           finished.className = "centered three column row finished";
+        } else {
+           finished.className = "centered three column row"
+        }
     }
 
     addCategory() {

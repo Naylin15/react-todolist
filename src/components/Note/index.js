@@ -9,13 +9,14 @@ class Note extends React.Component {
         this.editNote = this.editNote.bind(this);
         this.saveChanges = this.saveChanges.bind(this);
         this.checkNote = this.checkNote.bind(this);
+        this.addCategory = this.addCategory.bind(this);
         // the notesArray which is being passed as props is now part of the state
         this.state = {
             notesArray: this.props.notesArray,
         }
     }
 
-    checkNote = (id, e, data) => {
+    checkNote(id, e, data) {
         const finished = document.getElementById(id);
         if (data.checked) {
            finished.className = "centered three column row finished";
@@ -24,8 +25,11 @@ class Note extends React.Component {
         }
     }
 
-    addCategory() {
-        
+    addCategory(id, e, data) {
+        let newArray = [...this.state.notesArray];
+        newArray[id].category = data.value;
+        this.setState({notesArray: newArray});
+        this.props.updateState(newArray);
     }
 
     removeNote(id) {
@@ -62,6 +66,7 @@ class Note extends React.Component {
                         removeNote={this.removeNote}
                         saveChanges={this.saveChanges}
                         checkNote={this.checkNote}
+                        addCategory={this.addCategory}
                     />
                 )}
             </Grid>

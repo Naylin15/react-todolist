@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header
+  className="main-header"
+>
+  <div
+    className="ui two item menu"
+  >
+    <span
+      className="item"
+    >
+      Personal Challenge
+    </span>
+    <a
+      className="item"
+      href="https://github.com/Naylin15/react-todolist"
+    >
+      View it on GitHub
+    </a>
+  </div>
+</header>
+`;

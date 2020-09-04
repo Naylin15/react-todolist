@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="ui centered container grid shadow"
+  >
+    <div
+      className="row"
+    >
+      <h2
+        className="ui header"
+      >
+        To-Do List
+      </h2>
+    </div>
+    <div
+      className="row"
+    >
+      <form
+        className="ui form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="field"
+        >
+          <input
+            onChange={[Function]}
+            placeholder="What's next?"
+            required={true}
+            value=""
+          />
+        </div>
+        <button
+          className="ui primary button"
+          type="submit"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    className="ui grid"
+  />
+</div>
+`;

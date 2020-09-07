@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="centered three column row"
+>
+  <div
+    className="two wide column"
+  >
+    <div
+      className="ui fitted checkbox"
+      onChange={[Function]}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      <input
+        checked={false}
+        className="hidden"
+        readOnly={true}
+        tabIndex={0}
+        type="checkbox"
+      />
+      <label />
+    </div>
+  </div>
+  <div
+    className="column"
+  >
+    <div
+      className="ui input"
+    >
+      <input
+        onChange={[Function]}
+        type="text"
+        value="abc"
+      />
+    </div>
+  </div>
+  <div
+    className="column"
+  >
+    <button
+      className="ui button ui green primary button"
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </div>
+</div>
+`;

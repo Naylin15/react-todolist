@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="centered three column row"
+>
+  <div
+    className="two wide column"
+  >
+    <div
+      className="ui fitted checkbox"
+      onChange={[Function]}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      <input
+        checked={false}
+        className="hidden"
+        readOnly={true}
+        tabIndex={0}
+        type="checkbox"
+      />
+      <label />
+    </div>
+  </div>
+  <div
+    className="column"
+  >
+    <h2
+      className="ui header"
+      id="note-undefined"
+    >
+      123
+    </h2>
+  </div>
+  <div
+    className="column"
+  >
+    <div
+      aria-expanded={false}
+      className="ui dropdown"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <i
+        aria-hidden="true"
+        className="filter icon"
+        onClick={[Function]}
+      />
+      <div
+        className="menu transition"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+          role="option"
+        >
+          <span
+            className="text"
+          >
+            Important
+          </span>
+        </div>
+        <div
+          className="item"
+          onClick={[Function]}
+          role="option"
+        >
+          <span
+            className="text"
+          >
+            Tomorrow
+          </span>
+        </div>
+        <div
+          className="item"
+          onClick={[Function]}
+          role="option"
+        >
+          <span
+            className="text"
+          >
+            Later
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-expanded={false}
+      className="ui dropdown"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <i
+        aria-hidden="true"
+        className="ellipsis vertical icon"
+        onClick={[Function]}
+      />
+      <div
+        className="menu transition"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+          role="option"
+        >
+          <span
+            className="text"
+          >
+            Delete
+          </span>
+        </div>
+        <div
+          className="item"
+          onClick={[Function]}
+          role="option"
+        >
+          <span
+            className="text"
+          >
+            Edit
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

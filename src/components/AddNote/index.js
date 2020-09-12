@@ -47,9 +47,9 @@ class AddNote extends Component {
                     <Grid.Row>    
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Field>
-                                <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} required/>
+                                <input placeholder="What's next?" value={this.state.value} onChange={this.handleChange} id='noteTitle' required/>
                             </Form.Field>
-                            <button type='submit' className='ui primary button'>Add</button>
+                            <button type='submit' className='ui primary button' id='addNoteBtn'>Add</button>
                         </Form>
                     </Grid.Row>
                 </Grid>

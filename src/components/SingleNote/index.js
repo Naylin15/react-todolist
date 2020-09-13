@@ -27,8 +27,8 @@ class SingleNote extends React.Component {
                         </Dropdown>
                         <Dropdown icon='ellipsis vertical'>
                             <Dropdown.Menu>
-                                <Dropdown.Item text='Delete' onClick={() => removeNote(noteId)}/>
-                                <Dropdown.Item text='Edit' onClick={() => editNote(noteId)} />
+                                <Dropdown.Item text='Delete' id={'removeNote-' + noteId} onClick={() => removeNote(noteId)}/>
+                                <Dropdown.Item text='Edit' id={'editNote-' + noteId} onClick={() => editNote(noteId)} />
                             </Dropdown.Menu>
                         </Dropdown>
                     </Grid.Column>

@@ -24,10 +24,10 @@ class EditNote extends React.Component {
                     <Checkbox />
                 </Grid.Column>
                 <Grid.Column>
-                    <Input value={this.state.value} onChange={this.handleChange}/>
+                    <Input value={this.state.value}  id={'editInput-' + this.state.noteId} onChange={this.handleChange}/>
                 </Grid.Column>
                 <Grid.Column>
-                    <Button className='ui green primary button' onClick={() => this.props.saveChanges(this.state.noteId, this.state.value)}>Save</Button>
+                    <Button className='ui green primary button' id={'saveButton-' + this.state.noteId} onClick={() => this.props.saveChanges(this.state.noteId, this.state.value)}>Save</Button>
                 </Grid.Column>
             </Grid.Row>
         )    

@@ -21,8 +21,8 @@ class SingleNote extends React.Component {
                         <Dropdown icon='filter'>
                             <Dropdown.Menu>
                                 <Dropdown.Item text='Important' value={'important'} onClick={(e, data)=>addCategory(noteId, e, data)}/>
-                                <Dropdown.Item text='Tomorrow' value={'later'} onClick={(e, data)=>addCategory(noteId, e, data)}/>
-                                <Dropdown.Item text='Later' value={'tomorrow'} onClick={(e, data)=>addCategory(noteId, e, data)}/>
+                                <Dropdown.Item text='Tomorrow' value={'tomorrow'} onClick={(e, data)=>addCategory(noteId, e, data)}/>
+                                <Dropdown.Item text='Later' value={'later'} onClick={(e, data)=>addCategory(noteId, e, data)}/>
                             </Dropdown.Menu>
                         </Dropdown>
                         <Dropdown icon='ellipsis vertical'>

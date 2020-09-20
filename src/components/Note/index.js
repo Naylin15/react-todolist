@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Dropdown } from 'semantic-ui-react';
 import SingleNote from '../SingleNote';
 
 class Note extends React.Component {
@@ -54,9 +54,41 @@ class Note extends React.Component {
         this.props.updateState(newArray);
     }
 
+    displayByCategory(categoryName) {
+        let newArray = [...this.props.notesArray];
+
+        if (categoryName !== 'all') {
+            let myNewArray = newArray.filter(function(newArray) {
+                return newArray.category === categoryName;
+            });
+            if(myNewArray.length !== 0) {
+                this.setState({notesArray: myNewArray});
+            }
+        } else {
+            this.setState({notesArray: this.props.notesArray});
+        }
+    }
+
+    renderContent() {
+        if (this.state.notesArray.length !== 0) {
+            return (
+            <Grid.Row centered>
+                <Dropdown icon='filter' text='Filter by tags'>
+                    <Dropdown.Menu>
+                        <Dropdown.Item text='All' onClick={() => (this.displayByCategory('all'))}/>
+                        <Dropdown.Item text='Important' onClick={() => (this.displayByCategory('important'))}/>
+                        <Dropdown.Item text='Tomorrow' onClick={() => (this.displayByCategory('tomorrow'))}/>
+                        <Dropdown.Item text='Later' onClick={() => (this.displayByCategory('later'))}/>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Grid.Row>);
+        }
+    }
+
     render() {
         return (
             <Grid>
+                {this.renderContent()}
                 {this.state.notesArray.map((note, index) =>  
                     <SingleNote
                         key={index}
